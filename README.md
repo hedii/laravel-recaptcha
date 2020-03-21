@@ -66,9 +66,9 @@ Insert the required javascript on a html form using the following method. You ca
 <form method="post">
     <!-- ...the rest of the form... -->
 
-    {!! Recaptcha::script('contact-form', 'recaptchaResponse') !!}
+    {!! Recaptcha::script('contact_form', 'recaptchaResponse') !!}
 
-    <!-- make sure you place an hidden input nammed recaptcha_response  -->
+    <!-- make sure you place a hidden input nammed recaptcha_response  -->
     <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 
     <input type="submit">
