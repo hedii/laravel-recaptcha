@@ -1,0 +1,48 @@
+{
+    "name": "hedii/laravel-recaptcha",
+    "description": "Google reCAPTCHA v3 for Laravel",
+    "keywords": ["laravel", "recaptcha", "hedii"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hedii",
+            "email": "contact@hedichaibi.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4.0",
+        "ext-json": "*",
+        "laravel/framework": "^7.0",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hedii\\LaravelRecaptcha\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hedii\\LaravelRecaptcha\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hedii\\LaravelRecaptcha\\RecaptchaServiceProvider"
+            ],
+            "aliases": {
+                "Recaptcha": "Hedii\\LaravelRecaptcha\\Facades\\Recaptcha"
+            }
+        }
+    }
+}
