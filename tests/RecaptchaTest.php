@@ -15,9 +15,9 @@ class RecaptchaTest extends TestCase
 
     protected function getEnvironmentSetUp($app): void
     {
-        $app['config']->set('recaptcha.site_key', env('RECAPTCHA_SITE_KEY'));
-        $app['config']->set('recaptcha.site_secret', env('RECAPTCHA_SECRET_KEY'));
-        $app['config']->set('recaptcha.minimum_score', env('RECAPTCHA_MINIMUM_SCORE'));
+        $app['config']->set('recaptcha.site_key', env('RECAPTCHA_SITE_KEY', ''));
+        $app['config']->set('recaptcha.secret_key', env('RECAPTCHA_SECRET_KEY', ''));
+        $app['config']->set('recaptcha.minimum_score', env('RECAPTCHA_MINIMUM_SCORE', 0.7));
     }
 
     /** @test */
