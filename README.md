@@ -33,12 +33,12 @@ return [
     /**
      * The recaptcha site key.
      */
-    'site_key' => env('RECAPTCHA_SITE_KEY'),
+    'site_key' => env('RECAPTCHA_SITE_KEY', ''),
 
     /**
      * The recaptcha site secret.
      */
-    'secret_key' => env('RECAPTCHA_SECRET_KEY'),
+    'secret_key' => env('RECAPTCHA_SECRET_KEY', ''),
 
     /**
      * The minimum score (from 0.0 to 1.0) a recaptcha response must have to be
