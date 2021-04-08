@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/hedii/laravel-recaptcha.svg?branch=master)](https://travis-ci.org/hedii/laravel-recaptcha)
+[![Build Status](https://github.com/hedii/laravel-recaptcha/workflows/Tests/badge.svg)](https://github.com/hedii/laravel-recaptcha/actions)
+[![Total Downloads](https://poser.pugx.org/hedii/laravel-recaptcha/downloads)](//packagist.org/packages/hedii/laravel-recaptcha)
+[![License](https://poser.pugx.org/hedii/laravel-recaptcha/license)](https://github.com/hedii/laravel-recaptcha/blob/master/LICENSE.md)
+[![Latest Stable Version](https://poser.pugx.org/hedii/laravel-recaptcha/v)](//packagist.org/packages/hedii/laravel-recaptcha)
 
 # Laravel Recaptcha
 
