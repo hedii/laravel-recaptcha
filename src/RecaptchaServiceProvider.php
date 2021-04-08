@@ -15,12 +15,12 @@ class RecaptchaServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/recaptcha.php', 'recaptcha');
 
-        $this->app->bind(Recaptcha::class, function () {
+        $this->app->bind(Recaptcha::class, function ($app) {
             return new Recaptcha(
-                $this->app['request'],
-                $this->app['config']['recaptcha.site_key'],
-                $this->app['config']['recaptcha.secret_key'],
-                $this->app['config']['recaptcha.minimum_score']
+                $app['request'],
+                $app['config']['recaptcha.site_key'],
+                $app['config']['recaptcha.secret_key'],
+                $app['config']['recaptcha.minimum_score']
             );
         });
 
