@@ -8,39 +8,15 @@ use Illuminate\Http\Request;
 
 class Recaptcha
 {
-    /**
-     * The http request instance.
-     */
-    private Request $request;
-
-    /**
-     * The recaptcha site key.
-     */
-    private string $siteKey;
-
-    /**
-     * The recaptcha secret key.
-     */
-    private string $secretKey;
-
-    /**
-     * The minimum score a recaptcha response must have to be valid.
-     */
-    private float $minimumScore;
-
-    public function __construct(Request $request, string $siteKey, string $secretKey, float $minimumScore)
-    {
-        $this->request = $request;
-        $this->siteKey = $siteKey;
-        $this->secretKey = $secretKey;
-        $this->minimumScore = $minimumScore;
+    public function __construct(
+        private Request $request,
+        private string $siteKey,
+        private string $secretKey,
+        private float $minimumScore
+    ) {
     }
 
-    /**
-     * Resolve the captcha score.
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
+    /** @throws \GuzzleHttp\Exception\GuzzleException */
     public function isValid(): bool
     {
         if (! $this->request->has('recaptcha_response')) {
@@ -68,9 +44,6 @@ class Recaptcha
         }
     }
 
-    /**
-     * Get the required recaptcha js scripts.
-     */
     public function script(?string $action = null, string $elementId = 'recaptchaResponse'): string
     {
         return <<<EOD
