@@ -10,40 +10,24 @@ class Recaptcha
 {
     /**
      * The http request instance.
-     *
-     * @var \Illuminate\Http\Request
      */
     private Request $request;
 
     /**
      * The recaptcha site key.
-     *
-     * @var string
      */
     private string $siteKey;
 
     /**
      * The recaptcha secret key.
-     *
-     * @var string
      */
     private string $secretKey;
 
     /**
      * The minimum score a recaptcha response must have to be valid.
-     *
-     * @var float
      */
     private float $minimumScore;
 
-    /**
-     * Recaptcha constructor.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param string $siteKey
-     * @param string $secretKey
-     * @param float $minimumScore
-     */
     public function __construct(Request $request, string $siteKey, string $secretKey, float $minimumScore)
     {
         $this->request = $request;
@@ -55,7 +39,7 @@ class Recaptcha
     /**
      * Resolve the captcha score.
      *
-     * @return bool
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function isValid(): bool
     {
@@ -86,10 +70,6 @@ class Recaptcha
 
     /**
      * Get the required recaptcha js scripts.
-     *
-     * @param string|null $action
-     * @param string $elementId
-     * @return string
      */
     public function script(?string $action = null, string $elementId = 'recaptchaResponse'): string
     {

@@ -6,11 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class RecaptchaServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/recaptcha.php', 'recaptcha');
@@ -27,11 +22,6 @@ class RecaptchaServiceProvider extends ServiceProvider
         $this->app->alias(Recaptcha::class, 'recaptcha');
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
     public function boot(): void
     {
         $this->publishes([__DIR__ . '/../config/recaptcha.php' => config_path('recaptcha.php')]);
